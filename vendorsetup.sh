@@ -10,10 +10,10 @@
 	export LC_ALL="C"
 	export ALLOW_MISSING_DEPENDENCIES=true
 
-	echo -e "\x1b[96melish: 开始添加OrangeFox Vars...\x1b[m"
+	echo -e "\x1b[96mmarkw: 开始添加OrangeFox Vars...\x1b[m"
 	## 构建信息
 	# 设置显示在关于页面里的维护人员名称
-	export OF_MAINTAINER=SonicBSV&KevinXu
+	export OF_MAINTAINER=SonicBSV and KevinXu
 	# 设置版本号为日期
 	export FOX_VERSION=$(date +%y.%m.%d)
 	# 当你需要标记出这个recovery是一个特殊版本时使用
@@ -41,8 +41,6 @@
 	export OF_ENABLE_LPTOOLS=1
 
 	## 添加橙狐特殊处理
-
-
 	# 不生成recovery的zip刷机包
 	export FOX_DISABLE_UPDATEZIP=1
 	# 跳过FBE解密流程（防止卡在橙狐LOGO或Redmi/Mi LOGO界面）
@@ -83,7 +81,7 @@
 
 	## 调整刷入zip刷机包时刷机脚本要检测的相关属性
 	# 设置一个很老的build时间，用于解决某些ROM例如MIUI刷机脚本里的防回滚保护检测
-	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
+	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1420041600"; # 2015-01-01 00:00:00 GMT+08:00
 	# 为“快速备份”指定默认选择的分区
 	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	# 将装载逻辑分区时的一些错误仅显示在日志里
@@ -105,10 +103,6 @@
 	# 设置默认时区为北京时间
 	export OF_DEFAULT_TIMEZONE="TAIST-8;TAIDT"
 
-	F=$(find "device" -maxdepth 2 -name "elish")
-	# 修改启动画面背景色为#000000
-	\cp -fp bootable/recovery/gui/theme/portrait_hdpi/splash.xml "$F"/recovery/root/twres/splash.xml
-	sed -i 's/background color="#D34E38"/background color="#000000"/g' "$F"/recovery/root/twres/splash.xml
-	sed -i 's/fill color="#FF8038"/fill color="#000000"/g' "$F"/recovery/root/twres/splash.xml
+	F=$(find "device" -maxdepth 2 -name "markw")
 
-	echo -e "\x1b[96melish: 当你看到这个消息的时候，所有的OrangeFox Var已经添加完毕！\x1b[m"
+	echo -e "\x1b[96mmarkw: 当你看到这个消息的时候，所有的OrangeFox Var已经添加完毕！\x1b[m"
